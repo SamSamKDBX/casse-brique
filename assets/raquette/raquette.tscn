@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bm3qgfl2tamaf"]
+
+[ext_resource type="Texture2D" uid="uid://s02ligkcbfc4" path="res://assets/raquette/skin_raquette_a.tres" id="1_x1e65"]
+[ext_resource type="Script" uid="uid://cjput2imsdeti" path="res://control_joueur.gd" id="2_k3jxx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k3jxx"]
+size = Vector2(66, 16)
+
+[node name="Raquette" type="CharacterBody2D" unique_id=1863617758]
+
+[node name="Control Joueur" type="Node" parent="." unique_id=949817635 node_paths=PackedStringArray("body")]
+script = ExtResource("2_k3jxx")
+body = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=689000491]
+shape = SubResource("RectangleShape2D_k3jxx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=159403531]
+texture = ExtResource("1_x1e65")
