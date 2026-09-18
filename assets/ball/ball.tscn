@@ -3,10 +3,19 @@
 [ext_resource type="Texture2D" uid="uid://l2u1rgwcproc" path="res://assets/sprites/breakout_pieces.png" id="1_0hqb1"]
 [ext_resource type="Script" uid="uid://8fk5nvolos1m" path="res://assets/ball/contol_ball.gd" id="2_in8lq"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_in8lq"]
+bounce = 1.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_0hqb1"]
 radius = 5.0
 
 [node name="Ball" type="RigidBody2D" unique_id=1449724660]
+physics_material_override = SubResource("PhysicsMaterial_in8lq")
+gravity_scale = 0.0
+sleeping = true
+lock_rotation = true
+linear_damp_mode = 1
+angular_damp_mode = 1
 
 [node name="Contol Ball" type="Node" parent="." unique_id=925254034 node_paths=PackedStringArray("body")]
 script = ExtResource("2_in8lq")
