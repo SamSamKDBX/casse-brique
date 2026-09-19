@@ -4,12 +4,14 @@
 [ext_resource type="Script" uid="uid://8fk5nvolos1m" path="res://assets/ball/contol_ball.gd" id="2_in8lq"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_in8lq"]
+friction = 0.0
+rough = true
 bounce = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0hqb1"]
 radius = 5.0
 
-[node name="Ball" type="RigidBody2D" unique_id=1449724660]
+[node name="Ball" type="RigidBody2D" unique_id=1449724660 groups=["ball"]]
 physics_material_override = SubResource("PhysicsMaterial_in8lq")
 gravity_scale = 0.0
 sleeping = true
