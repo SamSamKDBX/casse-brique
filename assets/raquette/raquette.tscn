@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bm3qgfl2tamaf"]
 
 [ext_resource type="Texture2D" uid="uid://s02ligkcbfc4" path="res://assets/raquette/skin_raquette_a.tres" id="1_x1e65"]
-[ext_resource type="Script" uid="uid://cjput2imsdeti" path="res://control_joueur.gd" id="2_k3jxx"]
+[ext_resource type="Script" uid="uid://cjput2imsdeti" path="res://assets/raquette/control_joueur.gd" id="2_k3jxx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k3jxx"]
 size = Vector2(66, 16)

@@ -5,4 +5,4 @@ func _on_fosse_body_entered(body: Node2D) -> void:
 		game_over()
 
 func game_over():
-	get_tree().change_scene_to_file("res://game_over.tscn")
+	get_tree().change_scene_to_file("res://ui/game_over/game_over.tscn")

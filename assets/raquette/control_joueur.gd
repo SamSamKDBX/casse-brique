@@ -13,8 +13,3 @@ func _physics_process(delta: float) -> void:
 		body.velocity.x = Input.get_axis("p1_left", "p1_right") * speed
 		# bouger en fonction de la vélocité
 		body.move_and_slide()
-		# récupérer la largeur de l'écran
-		var viewport_width = body.get_viewport_rect().size.x
-		# ne pas sortir de l'écran
-		body.position.x = clamp(body.position.x, margin_screen, viewport_width - margin_screen)
-	print(body.position)

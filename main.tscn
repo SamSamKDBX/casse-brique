@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://ql1elojd68dt" path="res://assets/ball/ball.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://c4e0dxajlqxij" path="res://assets/wall/wall.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dsnarkp7mva4t" path="res://assets/fosse/fosse.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://dvf8ju7oloarn" path="res://assets/brick/brick.tscn" id="5_lquwl"]
+[ext_resource type="Script" uid="uid://csj8xxiob40wh" path="res://control_game.gd" id="6_7mycd"]
 
 [node name="Main" type="Node2D" unique_id=2064868903]
 
@@ -27,3 +29,12 @@ scale = Vector2(0.72, 1)
 
 [node name="Fosse" parent="." unique_id=1178530369 instance=ExtResource("4_1bvp3")]
 position = Vector2(12, 238)
+
+[node name="Brick" parent="." unique_id=2004225022 instance=ExtResource("5_lquwl")]
+position = Vector2(162, 79)
+
+[node name="Brick2" parent="." unique_id=1695477133 instance=ExtResource("5_lquwl")]
+position = Vector2(164, 57)
+
+[node name="Control Game" type="Node" parent="." unique_id=1239080454]
+script = ExtResource("6_7mycd")

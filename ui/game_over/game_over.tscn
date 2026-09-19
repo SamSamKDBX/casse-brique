@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://4n0nky1npq5l"]
 
-[ext_resource type="Script" uid="uid://jnibuajs87a8" path="res://play_button.gd" id="1_y26ei"]
+[ext_resource type="PackedScene" uid="uid://daallurqn2des" path="res://assets/play_button/play_button.tscn" id="1_ns3eh"]
 
 [node name="GameOverScene" type="Control" unique_id=2051747966]
 layout_mode = 3
@@ -36,18 +36,7 @@ text = "Game Over"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PlayButton" type="Button" parent="." unique_id=78589933]
+[node name="PlayButton" parent="." unique_id=1692280038 instance=ExtResource("1_ns3eh")]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -20.5
-offset_top = -90.0
-offset_right = 20.5
-offset_bottom = -59.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "Play"
-script = ExtResource("1_y26ei")
+offset_left = -23.5
+offset_right = 17.5

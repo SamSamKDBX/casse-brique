@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://bna71rkylscko"]
+
+[ext_resource type="PackedScene" uid="uid://dvf8ju7oloarn" path="res://assets/brick/brick.tscn" id="1_iox7u"]
+
+[node name="Bricks" type="Node2D" unique_id=2030730168]
+visible = false
+
+[node name="Brick" parent="." unique_id=2004225022 instance=ExtResource("1_iox7u")]
+position = Vector2(25, 18)
+
+[node name="Brick2" parent="." unique_id=1683427808 instance=ExtResource("1_iox7u")]
+position = Vector2(59, 18)
+
+[node name="Brick3" parent="." unique_id=890743366 instance=ExtResource("1_iox7u")]
+position = Vector2(93, 18)
+
+[node name="Brick4" parent="." unique_id=66262529 instance=ExtResource("1_iox7u")]
+position = Vector2(126, 18)
+
+[node name="Brick5" parent="." unique_id=1993623750 instance=ExtResource("1_iox7u")]
+position = Vector2(160, 18)
+
+[node name="Brick6" parent="." unique_id=1766209318 instance=ExtResource("1_iox7u")]
+position = Vector2(193, 18)
+
+[node name="Brick7" parent="." unique_id=1936527698 instance=ExtResource("1_iox7u")]
+position = Vector2(226, 18)
+
+[node name="Brick8" parent="." unique_id=1599023756 instance=ExtResource("1_iox7u")]
+position = Vector2(259, 18)
+
+[node name="Brick9" parent="." unique_id=50536481 instance=ExtResource("1_iox7u")]
+position = Vector2(293, 18)
+
+[node name="Brick10" parent="." unique_id=793405817 instance=ExtResource("1_iox7u")]
+position = Vector2(25, 36)
+
+[node name="Brick11" parent="." unique_id=473931068 instance=ExtResource("1_iox7u")]
+position = Vector2(59, 36)
+
+[node name="Brick12" parent="." unique_id=1551472356 instance=ExtResource("1_iox7u")]
+position = Vector2(93, 36)
+
+[node name="Brick13" parent="." unique_id=518659748 instance=ExtResource("1_iox7u")]
+position = Vector2(126, 36)
+
+[node name="Brick14" parent="." unique_id=925471012 instance=ExtResource("1_iox7u")]
+position = Vector2(160, 36)
+
+[node name="Brick15" parent="." unique_id=1765334715 instance=ExtResource("1_iox7u")]
+position = Vector2(193, 36)
+
+[node name="Brick16" parent="." unique_id=85517851 instance=ExtResource("1_iox7u")]
+position = Vector2(226, 36)
+
+[node name="Brick17" parent="." unique_id=1723458170 instance=ExtResource("1_iox7u")]
+position = Vector2(259, 36)
+
+[node name="Brick18" parent="." unique_id=224659113 instance=ExtResource("1_iox7u")]
+position = Vector2(293, 36)
+
+[node name="Brick19" parent="." unique_id=36223566 instance=ExtResource("1_iox7u")]
+position = Vector2(25, 54)
+
+[node name="Brick20" parent="." unique_id=1064144937 instance=ExtResource("1_iox7u")]
+position = Vector2(59, 54)
+
+[node name="Brick21" parent="." unique_id=2053728395 instance=ExtResource("1_iox7u")]
+position = Vector2(93, 54)
+
+[node name="Brick22" parent="." unique_id=1904067894 instance=ExtResource("1_iox7u")]
+position = Vector2(126, 54)
+
+[node name="Brick23" parent="." unique_id=260719283 instance=ExtResource("1_iox7u")]
+position = Vector2(160, 54)
+
+[node name="Brick24" parent="." unique_id=102725080 instance=ExtResource("1_iox7u")]
+position = Vector2(193, 54)
+
+[node name="Brick25" parent="." unique_id=98669298 instance=ExtResource("1_iox7u")]
+position = Vector2(226, 54)
+
+[node name="Brick26" parent="." unique_id=1749833549 instance=ExtResource("1_iox7u")]
+position = Vector2(259, 54)
+
+[node name="Brick27" parent="." unique_id=95073134 instance=ExtResource("1_iox7u")]
+position = Vector2(293, 54)
+
+[node name="Brick28" parent="." unique_id=1893301245 instance=ExtResource("1_iox7u")]
+position = Vector2(25, 71.41)
+
+[node name="Brick29" parent="." unique_id=912440069 instance=ExtResource("1_iox7u")]
+position = Vector2(59, 71.41)
+
+[node name="Brick30" parent="." unique_id=499625273 instance=ExtResource("1_iox7u")]
+position = Vector2(93, 71.41)
+
+[node name="Brick31" parent="." unique_id=567726906 instance=ExtResource("1_iox7u")]
+position = Vector2(126, 71.41)
+
+[node name="Brick32" parent="." unique_id=40596574 instance=ExtResource("1_iox7u")]
+position = Vector2(160, 71.41)
+
+[node name="Brick33" parent="." unique_id=2087077904 instance=ExtResource("1_iox7u")]
+position = Vector2(193, 71.41)
+
+[node name="Brick34" parent="." unique_id=575072674 instance=ExtResource("1_iox7u")]
+position = Vector2(226, 71.41)
+
+[node name="Brick35" parent="." unique_id=1142347414 instance=ExtResource("1_iox7u")]
+position = Vector2(259, 71.41)
+
+[node name="Brick36" parent="." unique_id=2034396580 instance=ExtResource("1_iox7u")]
+position = Vector2(293, 71.41)

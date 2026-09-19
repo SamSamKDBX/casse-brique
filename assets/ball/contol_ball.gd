@@ -6,6 +6,3 @@ extends Node
 
 func _ready() -> void:
 	body.linear_velocity.y = speed
-
-func _physics_process(delta: float) -> void:
-	print(body.linear_velocity)
