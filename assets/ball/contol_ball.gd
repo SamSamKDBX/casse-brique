@@ -5,11 +5,13 @@ extends Node
 @export var hitWallAudio: AudioStreamPlayer2D
 @export var hitBrickAudio: AudioStreamPlayer2D
 @export var hitRaquetteAudio: AudioStreamPlayer2D
+@export var hitAnimation: AnimationPlayer
 
 func _ready() -> void:
 	ballBody.linear_velocity.y = speed
 
 func _on_ball_body_entered(body: Node) -> void:
+	hitAnimation.play("hit_animation")
 	if body.is_in_group("wall"):
 		hitWallAudio.play()
 		print("hit wall")

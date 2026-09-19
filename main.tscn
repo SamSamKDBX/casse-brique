@@ -25,7 +25,7 @@ position = Vector2(12, 238)
 [node name="Bricks" parent="." unique_id=2030730168 instance=ExtResource("6_272bh")]
 
 [node name="Ball" parent="." unique_id=1449724660 instance=ExtResource("2_0xm2m")]
-position = Vector2(156, 164)
+position = Vector2(159, 170)
 
 [node name="Walls" type="Node2D" parent="." unique_id=1523010361]
 

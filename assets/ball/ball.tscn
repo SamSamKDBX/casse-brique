@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://ql1elojd68dt"]
 
-[ext_resource type="Texture2D" uid="uid://l2u1rgwcproc" path="res://assets/sprites/breakout_pieces.png" id="1_0hqb1"]
 [ext_resource type="Script" uid="uid://8fk5nvolos1m" path="res://assets/ball/contol_ball.gd" id="2_in8lq"]
 [ext_resource type="AudioStream" uid="uid://b88imcny7fy4e" path="res://assets/ball/wall_hit.wav" id="3_2w8dl"]
 [ext_resource type="AudioStream" uid="uid://l3luru6p8vqm" path="res://assets/ball/brick_hit.wav" id="4_8kxc4"]
@@ -17,34 +16,6 @@ bounce = 1.0
 radius = 5.0
 
 [sub_resource type="Animation" id="Animation_2w8dl"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("1_0hqb1")]
-}
-
-[sub_resource type="Animation" id="Animation_8kxc4"]
-resource_name = "hit_animation"
 length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -67,8 +38,36 @@ tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.16666667, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
+"update": 0,
 "values": [ExtResource("6_8kxc4"), ExtResource("7_i6v08"), ExtResource("6_8kxc4")]
+}
+
+[sub_resource type="Animation" id="Animation_8kxc4"]
+resource_name = "hit_animation"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.8, 0.8), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.099999994),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("7_i6v08"), ExtResource("6_8kxc4")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i6v08"]
@@ -87,19 +86,20 @@ max_contacts_reported = 4
 linear_damp_mode = 1
 angular_damp_mode = 1
 
-[node name="Contol Ball" type="Node" parent="." unique_id=925254034 node_paths=PackedStringArray("ballBody", "hitWallAudio", "hitBrickAudio", "hitRaquetteAudio")]
+[node name="Contol Ball" type="Node" parent="." unique_id=925254034 node_paths=PackedStringArray("ballBody", "hitWallAudio", "hitBrickAudio", "hitRaquetteAudio", "hitAnimation")]
 script = ExtResource("2_in8lq")
 ballBody = NodePath("..")
 hitWallAudio = NodePath("../HitWallAudio")
 hitBrickAudio = NodePath("../HitBrickAudio")
 hitRaquetteAudio = NodePath("../HitRaquetteAudio")
+hitAnimation = NodePath("../AnimationPlayer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=327762541]
 visible = false
 shape = SubResource("CircleShape2D_0hqb1")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=564795763]
-texture = ExtResource("1_0hqb1")
+texture = ExtResource("6_8kxc4")
 region_rect = Rect2(47.25554, 135.28682, 9.236004, 9.810989)
 
 [node name="HitWallAudio" type="AudioStreamPlayer2D" parent="." unique_id=1177250816]

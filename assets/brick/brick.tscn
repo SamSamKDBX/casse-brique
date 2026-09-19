@@ -7,6 +7,18 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v877k"]
 size = Vector2(32, 16)
 
+[sub_resource type="Animation" id="Animation_5kf4g"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_8p1c5"]
+resource_name = "hit_animation"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5kf4g"]
+_data = {
+&"RESET": SubResource("Animation_5kf4g"),
+&"hit_animation": SubResource("Animation_8p1c5")
+}
+
 [node name="Brick" type="StaticBody2D" unique_id=2004225022 groups=["brick"]]
 physics_material_override = SubResource("PhysicsMaterial_5kf4g")
 
@@ -17,3 +29,7 @@ shape = SubResource("RectangleShape2D_v877k")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1347729149]
 texture = ExtResource("1_8p1c5")
 region_rect = Rect2(84, 28, 32, 16)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=938811254]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_5kf4g")
