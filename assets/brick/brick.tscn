@@ -1,8 +1,6 @@
 [gd_scene format=3 uid="uid://dvf8ju7oloarn"]
 
 [ext_resource type="Texture2D" uid="uid://l2u1rgwcproc" path="res://assets/sprites/breakout_pieces.png" id="1_8p1c5"]
-[ext_resource type="Script" uid="uid://dnh2ev5gyydnk" path="res://assets/brick/control_brick.gd" id="2_5kf4g"]
-[ext_resource type="AudioStream" uid="uid://dtxtkmwx5xuqt" path="res://assets/sounds/hit/brick_hit.wav" id="3_6ey7l"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5kf4g"]
 
@@ -12,12 +10,6 @@ size = Vector2(32, 16)
 [node name="Brick" type="StaticBody2D" unique_id=2004225022 groups=["brick"]]
 physics_material_override = SubResource("PhysicsMaterial_5kf4g")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1421619162]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=341813699]
-scale = Vector2(1.035, 1.035)
-shape = SubResource("RectangleShape2D_v877k")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=368241483]
 shape = SubResource("RectangleShape2D_v877k")
 
@@ -25,13 +17,3 @@ shape = SubResource("RectangleShape2D_v877k")
 texture = ExtResource("1_8p1c5")
 region_enabled = true
 region_rect = Rect2(84, 28, 32, 16)
-
-[node name="Control Brick" type="Node" parent="." unique_id=684587851 node_paths=PackedStringArray("brickBody", "audio_hit")]
-script = ExtResource("2_5kf4g")
-brickBody = NodePath("..")
-audio_hit = NodePath("../AudioStreamPlayer2D")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=713183846]
-stream = ExtResource("3_6ey7l")
-
-[connection signal="body_entered" from="Area2D" to="Control Brick" method="_on_area_2d_body_entered"]

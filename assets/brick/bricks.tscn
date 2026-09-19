@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://dvf8ju7oloarn" path="res://assets/brick/brick.tscn" id="1_iox7u"]
 
 [node name="Bricks" type="Node2D" unique_id=2030730168]
-visible = false
 
 [node name="Brick" parent="." unique_id=2004225022 instance=ExtResource("1_iox7u")]
 position = Vector2(25, 18)

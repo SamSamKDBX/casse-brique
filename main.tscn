@@ -1,18 +1,19 @@
 [gd_scene format=3 uid="uid://b280vf1xf42rq"]
 
+[ext_resource type="AudioStream" uid="uid://bumn4116fy6du" path="res://assets/sounds/music/Juhani Junkala [Retro Game Music Pack] Level 2.wav" id="1_272bh"]
 [ext_resource type="PackedScene" uid="uid://bm3qgfl2tamaf" path="res://assets/raquette/raquette.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://ql1elojd68dt" path="res://assets/ball/ball.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://c4e0dxajlqxij" path="res://assets/wall/wall.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dsnarkp7mva4t" path="res://assets/fosse/fosse.tscn" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://csj8xxiob40wh" path="res://control_game.gd" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://bna71rkylscko" path="res://assets/brick/bricks.tscn" id="6_272bh"]
-[ext_resource type="AudioStream" path="res://assets/sounds/actions/Juhani Junkala [Retro Game Music Pack] Level 1.wav" id="7_272bh"]
 
 [node name="Main" type="Node2D" unique_id=2064868903]
 
 [node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=2053454524]
 position = Vector2(159, 153)
-stream = ExtResource("7_272bh")
+stream = ExtResource("1_272bh")
+volume_db = -18.395
 autoplay = true
 
 [node name="Raquette" parent="." unique_id=1863617758 instance=ExtResource("1_ig7tw")]
@@ -25,7 +26,6 @@ position = Vector2(160, 183)
 position = Vector2(12, 238)
 
 [node name="Bricks" parent="." unique_id=2030730168 instance=ExtResource("6_272bh")]
-visible = true
 
 [node name="Walls" type="Node2D" parent="." unique_id=1523010361]
 

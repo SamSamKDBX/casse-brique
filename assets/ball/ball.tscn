@@ -2,6 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://l2u1rgwcproc" path="res://assets/sprites/breakout_pieces.png" id="1_0hqb1"]
 [ext_resource type="Script" uid="uid://8fk5nvolos1m" path="res://assets/ball/contol_ball.gd" id="2_in8lq"]
+[ext_resource type="AudioStream" uid="uid://b88imcny7fy4e" path="res://assets/ball/wall_hit.wav" id="3_2w8dl"]
+[ext_resource type="AudioStream" uid="uid://l3luru6p8vqm" path="res://assets/ball/brick_hit.wav" id="4_8kxc4"]
+[ext_resource type="AudioStream" uid="uid://n121mau6hm8s" path="res://assets/ball/raquette_hit.mp3" id="5_i6v08"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_in8lq"]
 friction = 0.0
@@ -16,12 +19,17 @@ physics_material_override = SubResource("PhysicsMaterial_in8lq")
 gravity_scale = 0.0
 sleeping = true
 lock_rotation = true
+contact_monitor = true
+max_contacts_reported = 4
 linear_damp_mode = 1
 angular_damp_mode = 1
 
-[node name="Contol Ball" type="Node" parent="." unique_id=925254034 node_paths=PackedStringArray("body")]
+[node name="Contol Ball" type="Node" parent="." unique_id=925254034 node_paths=PackedStringArray("ballBody", "hitWallAudio", "hitBrickAudio", "hitRaquetteAudio")]
 script = ExtResource("2_in8lq")
-body = NodePath("..")
+ballBody = NodePath("..")
+hitWallAudio = NodePath("../HitWallAudio")
+hitBrickAudio = NodePath("../HitBrickAudio")
+hitRaquetteAudio = NodePath("../HitRaquetteAudio")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=327762541]
 shape = SubResource("CircleShape2D_0hqb1")
@@ -30,3 +38,14 @@ shape = SubResource("CircleShape2D_0hqb1")
 texture = ExtResource("1_0hqb1")
 region_enabled = true
 region_rect = Rect2(47.25554, 135.28682, 9.236004, 9.810989)
+
+[node name="HitWallAudio" type="AudioStreamPlayer2D" parent="." unique_id=1177250816]
+stream = ExtResource("3_2w8dl")
+
+[node name="HitBrickAudio" type="AudioStreamPlayer2D" parent="." unique_id=1527501014]
+stream = ExtResource("4_8kxc4")
+
+[node name="HitRaquetteAudio" type="AudioStreamPlayer2D" parent="." unique_id=1502345386]
+stream = ExtResource("5_i6v08")
+
+[connection signal="body_entered" from="." to="Contol Ball" method="_on_ball_body_entered"]
