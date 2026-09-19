@@ -16,6 +16,8 @@ position = Vector2(159, 220)
 position = Vector2(160, 183)
 
 [node name="Wall" parent="." unique_id=1115099637 instance=ExtResource("3_h2yge")]
+position = Vector2(-9, 0)
+scale = Vector2(1.04, 1)
 
 [node name="Wall2" parent="." unique_id=662029129 instance=ExtResource("3_h2yge")]
 position = Vector2(-2.842171e-14, 8)
