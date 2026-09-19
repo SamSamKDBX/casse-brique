@@ -13,6 +13,7 @@ script = ExtResource("2_k3jxx")
 body = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=689000491]
+visible = false
 shape = SubResource("RectangleShape2D_k3jxx")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=159403531]

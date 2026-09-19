@@ -8,10 +8,11 @@ size = Vector2(303, 12)
 [node name="Fosse" type="Area2D" unique_id=1178530369]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=627045390]
+visible = false
 position = Vector2(147.5, -4)
 shape = SubResource("RectangleShape2D_h2yge")
 
-[node name="Node" type="Node" parent="." unique_id=530708051]
+[node name="Control Fosse" type="Node" parent="." unique_id=530708051]
 script = ExtResource("1_i6xi0")
 
-[connection signal="body_entered" from="." to="Node" method="_on_fosse_body_entered"]
+[connection signal="body_entered" from="." to="Control Fosse" method="_on_fosse_body_entered"]

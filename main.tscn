@@ -19,13 +19,13 @@ autoplay = true
 [node name="Raquette" parent="." unique_id=1863617758 instance=ExtResource("1_ig7tw")]
 position = Vector2(159, 220)
 
-[node name="Ball" parent="." unique_id=1449724660 instance=ExtResource("2_0xm2m")]
-position = Vector2(160, 183)
-
 [node name="Fosse" parent="." unique_id=1178530369 instance=ExtResource("4_1bvp3")]
 position = Vector2(12, 238)
 
 [node name="Bricks" parent="." unique_id=2030730168 instance=ExtResource("6_272bh")]
+
+[node name="Ball" parent="." unique_id=1449724660 instance=ExtResource("2_0xm2m")]
+position = Vector2(156, 164)
 
 [node name="Walls" type="Node2D" parent="." unique_id=1523010361]
 

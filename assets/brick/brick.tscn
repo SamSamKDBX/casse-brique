@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dvf8ju7oloarn"]
 
-[ext_resource type="Texture2D" uid="uid://l2u1rgwcproc" path="res://assets/sprites/breakout_pieces.png" id="1_8p1c5"]
+[ext_resource type="Texture2D" uid="uid://dkshub05m50aj" path="res://assets/brick/skin_brick_a.tres" id="1_8p1c5"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5kf4g"]
 
@@ -11,9 +11,9 @@ size = Vector2(32, 16)
 physics_material_override = SubResource("PhysicsMaterial_5kf4g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=368241483]
+visible = false
 shape = SubResource("RectangleShape2D_v877k")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1347729149]
 texture = ExtResource("1_8p1c5")
-region_enabled = true
 region_rect = Rect2(84, 28, 32, 16)
