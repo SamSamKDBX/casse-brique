@@ -7,6 +7,8 @@ extends Node
 @export var hitRaquetteAudio: AudioStreamPlayer2D
 @export var hitAnimation: AnimationPlayer
 
+signal update_score
+
 func _ready() -> void:
 	ballBody.linear_velocity.y = speed
 
@@ -19,6 +21,10 @@ func _on_ball_body_entered(body: Node) -> void:
 		hitRaquetteAudio.play()
 		print("hit raquette")
 	elif body.is_in_group("brick"):
-		hitBrickAudio.play()
-		print("hit brick")
-		body.queue_free()
+		hitBrick(body)
+		
+func hitBrick(body: Node):
+	hitBrickAudio.play()
+	print("hit brick")
+	body.queue_free()
+	update_score.emit()

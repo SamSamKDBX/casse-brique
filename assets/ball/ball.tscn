@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://ql1elojd68dt"]
 
+[ext_resource type="Script" uid="uid://bh6xmywf0bfwe" path="res://assets/ball/ball.gd" id="1_2i37t"]
 [ext_resource type="PackedScene" uid="uid://q5va7g4kuwfl" path="res://assets/trail/trail.tscn" id="1_i6v08"]
 [ext_resource type="Script" uid="uid://8fk5nvolos1m" path="res://assets/ball/contol_ball.gd" id="2_in8lq"]
 [ext_resource type="AudioStream" uid="uid://b88imcny7fy4e" path="res://assets/ball/wall_hit.wav" id="3_2w8dl"]
@@ -86,12 +87,13 @@ contact_monitor = true
 max_contacts_reported = 4
 linear_damp_mode = 1
 angular_damp_mode = 1
+script = ExtResource("1_2i37t")
 
 [node name="Trail" parent="." unique_id=952136346 instance=ExtResource("1_i6v08")]
 width = 5.0
 default_color = Color(1, 0.8784314, 0.78039217, 0.8862745)
 
-[node name="Contol Ball" type="Node" parent="." unique_id=925254034 node_paths=PackedStringArray("ballBody", "hitWallAudio", "hitBrickAudio", "hitRaquetteAudio", "hitAnimation")]
+[node name="ContolBall" type="Node" parent="." unique_id=925254034 node_paths=PackedStringArray("ballBody", "hitWallAudio", "hitBrickAudio", "hitRaquetteAudio", "hitAnimation")]
 script = ExtResource("2_in8lq")
 ballBody = NodePath("..")
 hitWallAudio = NodePath("../HitWallAudio")
@@ -119,4 +121,5 @@ stream = ExtResource("5_i6v08")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=149551981]
 libraries/ = SubResource("AnimationLibrary_i6v08")
 
-[connection signal="body_entered" from="." to="Contol Ball" method="_on_ball_body_entered"]
+[connection signal="body_entered" from="." to="ContolBall" method="_on_ball_body_entered"]
+[connection signal="update_score" from="ContolBall" to="." method="_on_contol_ball_update_score"]

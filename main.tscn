@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://csj8xxiob40wh" path="res://control_game.gd" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://bna71rkylscko" path="res://assets/brick/bricks.tscn" id="6_272bh"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_272bh"]
+
 [node name="Main" type="Node2D" unique_id=2064868903]
 
 [node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=2053454524]
@@ -23,30 +25,45 @@ position = Vector2(159, 220)
 position = Vector2(12, 238)
 
 [node name="Bricks" parent="." unique_id=2030730168 instance=ExtResource("6_272bh")]
+position = Vector2(0, 7)
 
 [node name="Ball" parent="." unique_id=1449724660 instance=ExtResource("2_0xm2m")]
 position = Vector2(159, 170)
 
 [node name="Walls" type="Node2D" parent="." unique_id=1523010361]
+position = Vector2(0, 7)
 
 [node name="Wall" parent="Walls" unique_id=1115099637 instance=ExtResource("3_h2yge")]
-position = Vector2(-9, 0)
+position = Vector2(-9, 1)
 scale = Vector2(1.04, 1)
 
 [node name="Wall2" parent="Walls" unique_id=662029129 instance=ExtResource("3_h2yge")]
-position = Vector2(-2.842171e-14, 8)
+position = Vector2(0, 9)
 rotation = 1.5707964
 scale = Vector2(0.72, 1)
 
 [node name="Wall3" parent="Walls" unique_id=1560355268 instance=ExtResource("3_h2yge")]
-position = Vector2(319.15, 8)
+position = Vector2(319.15, 9)
 rotation = 1.5707964
 scale = Vector2(0.72, 1)
 
-[node name="Control Game" type="Node" parent="." unique_id=1239080454]
+[node name="Control Game" type="Node" parent="." unique_id=1239080454 node_paths=PackedStringArray("scoreValueLabel")]
 script = ExtResource("6_7mycd")
+scoreValueLabel = NodePath("../ScoreValueLabel")
 
-[node name="Label" type="Label" parent="." unique_id=1045611939]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="ScoreLabel" type="Label" parent="." unique_id=1045611939]
+offset_left = 1.0
+offset_top = -5.0
+offset_right = 53.0
+offset_bottom = 18.0
+text = "Score :"
+
+[node name="ScoreValueLabel" type="Label" parent="." unique_id=1103074283]
+offset_left = 58.0
+offset_top = -4.0
+offset_right = 101.0
+offset_bottom = 19.0
 text = "0"
+label_settings = SubResource("LabelSettings_272bh")
+
+[connection signal="update_score" from="Ball" to="Control Game" method="_on_ball_update_score"]
