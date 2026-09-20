@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dsnarkp7mva4t" path="res://assets/fosse/fosse.tscn" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://csj8xxiob40wh" path="res://control_game.gd" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://bna71rkylscko" path="res://assets/brick/bricks.tscn" id="6_272bh"]
+[ext_resource type="AudioStream" uid="uid://citcf2u71o8wn" path="res://assets/sounds/effects/coin.wav" id="8_5vw27"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_272bh"]
 
@@ -47,8 +48,9 @@ position = Vector2(319.15, 9)
 rotation = 1.5707964
 scale = Vector2(0.72, 1)
 
-[node name="Control Game" type="Node" parent="." unique_id=1239080454 node_paths=PackedStringArray("scoreValueLabel")]
+[node name="Control Game" type="Node" parent="." unique_id=1239080454 node_paths=PackedStringArray("audioCoin", "scoreValueLabel")]
 script = ExtResource("6_7mycd")
+audioCoin = NodePath("../CoinAudio")
 scoreValueLabel = NodePath("../ScoreValueLabel")
 
 [node name="ScoreLabel" type="Label" parent="." unique_id=1045611939]
@@ -65,5 +67,8 @@ offset_right = 101.0
 offset_bottom = 19.0
 text = "0"
 label_settings = SubResource("LabelSettings_272bh")
+
+[node name="CoinAudio" type="AudioStreamPlayer2D" parent="." unique_id=905681628]
+stream = ExtResource("8_5vw27")
 
 [connection signal="update_score" from="Ball" to="Control Game" method="_on_ball_update_score"]

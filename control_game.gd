@@ -1,5 +1,6 @@
 extends Node
 
+@export var audioCoin: AudioStreamPlayer2D
 @export var scoreValueLabel: Label
 var score: int = 0
 var updatedScore: int = 0
@@ -9,6 +10,7 @@ func _process(_delta: float) -> void:
 	if get_tree().get_nodes_in_group("brick").is_empty():
 		winning()
 	if score < updatedScore:
+		audioCoin.play()
 		scoreValueLabel.label_settings.font_color = Color.YELLOW
 		score += 1
 	else:
