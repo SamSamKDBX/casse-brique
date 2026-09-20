@@ -23,6 +23,7 @@ driver/output_latency=1
 
 window/size/viewport_width=320
 window/size/viewport_height=240
+window/stretch/mode="canvas_items"
 window/stretch/scale_mode="integer"
 
 [input]

@@ -1,6 +1,7 @@
 extends Node
 
 @export var audioCoin: AudioStreamPlayer2D
+@export var encouragementAnimation: AnimationPlayer
 @export var scoreValueLabel: Label
 var score: int = 0
 var updatedScore: int = 0
@@ -22,3 +23,12 @@ func winning():
 
 func _on_ball_update_score(hotness: int) -> void:
 	updatedScore += 10 * hotness
+	showEncouragement(hotness)
+
+func showEncouragement(hotness: int):
+	if hotness == 1:
+		encouragementAnimation.play("good")
+	elif hotness == 2:
+		encouragementAnimation.play("great")
+	elif hotness == 3:
+		encouragementAnimation.play("excellent")
