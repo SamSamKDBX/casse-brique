@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://q5va7g4kuwfl"]
+
+[ext_resource type="Script" uid="uid://mgglldys2h4n" path="res://assets/raquette/trail.gd" id="1_ao7n6"]
+
+[sub_resource type="Curve" id="Curve_q0hay"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5022625, 1), 0.0, 0.0, 0, 0, Vector2(0.9954751, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="Trail" type="Line2D" unique_id=952136346]
+width_curve = SubResource("Curve_q0hay")
+default_color = Color(1, 0.58431375, 0.105882354, 1)
+script = ExtResource("1_ao7n6")

@@ -45,3 +45,8 @@ scale = Vector2(0.72, 1)
 
 [node name="Control Game" type="Node" parent="." unique_id=1239080454]
 script = ExtResource("6_7mycd")
+
+[node name="Label" type="Label" parent="." unique_id=1045611939]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "0"

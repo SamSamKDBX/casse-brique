@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://ql1elojd68dt"]
 
+[ext_resource type="PackedScene" uid="uid://q5va7g4kuwfl" path="res://assets/trail/trail.tscn" id="1_i6v08"]
 [ext_resource type="Script" uid="uid://8fk5nvolos1m" path="res://assets/ball/contol_ball.gd" id="2_in8lq"]
 [ext_resource type="AudioStream" uid="uid://b88imcny7fy4e" path="res://assets/ball/wall_hit.wav" id="3_2w8dl"]
 [ext_resource type="AudioStream" uid="uid://l3luru6p8vqm" path="res://assets/ball/brick_hit.wav" id="4_8kxc4"]
@@ -85,6 +86,10 @@ contact_monitor = true
 max_contacts_reported = 4
 linear_damp_mode = 1
 angular_damp_mode = 1
+
+[node name="Trail" parent="." unique_id=952136346 instance=ExtResource("1_i6v08")]
+width = 5.0
+default_color = Color(1, 0.8784314, 0.78039217, 0.8862745)
 
 [node name="Contol Ball" type="Node" parent="." unique_id=925254034 node_paths=PackedStringArray("ballBody", "hitWallAudio", "hitBrickAudio", "hitRaquetteAudio", "hitAnimation")]
 script = ExtResource("2_in8lq")

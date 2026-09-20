@@ -1,18 +1,15 @@
 [gd_scene format=3 uid="uid://bm3qgfl2tamaf"]
 
+[ext_resource type="PackedScene" uid="uid://q5va7g4kuwfl" path="res://assets/trail/trail.tscn" id="1_q0hay"]
 [ext_resource type="Texture2D" uid="uid://s02ligkcbfc4" path="res://assets/raquette/skin_raquette_a.tres" id="1_x1e65"]
 [ext_resource type="Script" uid="uid://cjput2imsdeti" path="res://assets/raquette/control_joueur.gd" id="2_k3jxx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k3jxx"]
 size = Vector2(66, 16)
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_k3jxx"]
-particle_flag_align_y = true
-particle_flag_disable_z = true
-direction = Vector3(0, 0, 0)
-gravity = Vector3(0, 0, 0)
-
 [node name="Raquette" type="CharacterBody2D" unique_id=1863617758 groups=["raquette"]]
+
+[node name="Trail" parent="." unique_id=952136346 instance=ExtResource("1_q0hay")]
 
 [node name="Control Joueur" type="Node" parent="." unique_id=949817635 node_paths=PackedStringArray("body")]
 script = ExtResource("2_k3jxx")
@@ -24,8 +21,3 @@ shape = SubResource("RectangleShape2D_k3jxx")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=159403531]
 texture = ExtResource("1_x1e65")
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1469856691]
-position = Vector2(1, 0)
-lifetime = 0.09999999999999999
-process_material = SubResource("ParticleProcessMaterial_k3jxx")
