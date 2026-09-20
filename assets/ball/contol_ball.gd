@@ -7,6 +7,8 @@ extends Node
 @export var hitRaquetteAudio: AudioStreamPlayer2D
 @export var hitAnimation: AnimationPlayer
 
+var hotness: int = 0
+
 signal update_score
 
 func _ready() -> void:
@@ -20,6 +22,7 @@ func _on_ball_body_entered(body: Node) -> void:
 	elif body.is_in_group("raquette"):
 		hitRaquetteAudio.play()
 		print("hit raquette")
+		hotness = 0
 	elif body.is_in_group("brick"):
 		hitBrick(body)
 		
@@ -27,4 +30,5 @@ func hitBrick(body: Node):
 	hitBrickAudio.play()
 	print("hit brick")
 	body.queue_free()
-	update_score.emit()
+	hotness += 1
+	update_score.emit(hotness)
