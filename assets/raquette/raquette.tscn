@@ -4,9 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://s02ligkcbfc4" path="res://assets/raquette/skin_raquette_a.tres" id="1_x1e65"]
 [ext_resource type="Script" uid="uid://cjput2imsdeti" path="res://assets/raquette/control_joueur.gd" id="2_k3jxx"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k3jxx"]
-size = Vector2(66, 16)
-
 [node name="Raquette" type="CharacterBody2D" unique_id=1863617758 groups=["raquette"]]
 
 [node name="Trail" parent="." unique_id=952136346 instance=ExtResource("1_q0hay")]
@@ -15,9 +12,9 @@ size = Vector2(66, 16)
 script = ExtResource("2_k3jxx")
 body = NodePath("..")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=689000491]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1299510931]
 visible = false
-shape = SubResource("RectangleShape2D_k3jxx")
+polygon = PackedVector2Array(-27, -8, 28, -8, 32, -4, 32, 4, 27, 8, -27, 8, -32, 3, -32, -3)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=159403531]
 texture = ExtResource("1_x1e65")
